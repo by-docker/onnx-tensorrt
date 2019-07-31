@@ -12,7 +12,7 @@ VERSION := $(shell cat ${file})
 container:
 	docker build --pull \
 	--build-arg TENSORRT_VERSION=19.06-py3 \
-	--build-arg CUDA_VERSION=10.1 \
+	--build-arg INCLUDE_CUDA_VERSION=10.1 \
 	-t $(IMAGE_NAME) -f ${DOCKER_FILE} .
 	docker tag $(IMAGE_NAME) $(IMAGE_NAME):$(VERSION)
 
